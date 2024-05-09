@@ -1,0 +1,14 @@
+{
+	"content" : [
+		"jsCore",
+		"jsKeyboardEvents",
+		"jsLexicalTools",
+		"jsStyleManager",
+		"jsComponentLib"
+	],
+	"UIpackage" : "all",
+	"ressourcePath" : [
+	
+	],
+	"liveReloadspecificPort" : 357730
+}
