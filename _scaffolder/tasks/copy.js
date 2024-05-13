@@ -13,13 +13,10 @@ module.exports = function (grunt, options) {
 				],
 			dest: '<%=pathToProject%>',
 			filter : function(src) {
-				console.log(src);
 				return !src.match(/_scaffolder\\Gruntfile|_scaffolder\\tasks/)
 			},
 			rename : function(dest, src) {
-//				console.log('seen ' + src);
 				if (src.match(baseWord)) {
-//					console.log('renaming ' + src);
 					src = src.replace(baseWord, options.appName);
 				}
 				return src;
@@ -27,7 +24,6 @@ module.exports = function (grunt, options) {
 			options :{
 				process : function(content, srcpath) {
 					if (srcpath.match(/index|Launcher|main/)) {
-//						console.log('expanding name in ' + srcpath);
 						content = content.replace(appWord, options.appName);
 					}
 					return content;

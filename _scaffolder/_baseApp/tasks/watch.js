@@ -14,8 +14,9 @@ module.exports = function(grunt, options) {
 			tasks: [
 			    'browserify:debug',
 			    'exorcise:debug',
-			    'sorcery',
-			    'copy:publicAssets'
+			    'copy:publicAssets',
+			    'copy:buildCopy',
+			    'sorcery'
 			]
 		}
 	}

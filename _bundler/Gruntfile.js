@@ -4,7 +4,8 @@ const exec = require('child_process').execSync;
 module.exports = function (grunt) {
 	
 	grunt.file.setBase('../../');
-	const rootPath = '"c:\\production data\\Git';
+	;
+	const rootPath = process.cwd();
 	const codeBasePath = '/codebase';
 	const currentBundle = 'bundleFromSource';
 	const projectsFolder = 'projects/';
@@ -27,7 +28,7 @@ module.exports = function (grunt) {
 	folderArray.forEach(function(val, key) {
 		browserifyPath.push(rootPath + codeBasePath + val);
 	});
-	browserifyPath.push(projectsFolder + currentName + '/App/**/*.*');
+	browserifyPath.push(rootPath + '/' + projectsFolder + currentName + '/src/App');
 	configPath.push(path.join(process.cwd(), selfPath + '/' + tasksPath));
 	
 	require('load-grunt-config')(grunt, {
@@ -42,16 +43,16 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', function() {});
 	
 	grunt.registerTask('buildFromSources', '', function() {
-		exec('cd ' + rootPath +  '\\_frameworkCoreBuild" \
+		exec('cd "' + rootPath +  '\\_formantCoreBundler-master" \
 && grunt \
-&& cd ..\\_frameworkComponentsBuild \
+&& cd ..\\_formantComponentLibBundler-master \
 && grunt \
 && cd ..\\projects\\' + currentName
 + ' && grunt build');
 	});
 	
 	grunt.registerTask('build', '', function() {
-		exec('cd ' + rootPath +  '/projects/' + currentName + '" \
+		exec('cd "' + rootPath +  '/projects/' + currentName + '" \
 && grunt build');
 	});
 }

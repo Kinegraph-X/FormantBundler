@@ -1,4 +1,4 @@
-const {App, TemplateFactory} = require('formant');
+const {App, TemplateFactory} = require('formantjs');
 
 /**
  * @factory appName
@@ -8,7 +8,7 @@ module.exports = function(parentView) {
 	return {
 		init : function (containerSelector) {
 			
-			document.querySelector(containerSelector).innerHTML = 'Hello from appName';
+			document.querySelector(containerSelector).innerHTML = 'Hello from appName 😎';
 			
 		}
 	}

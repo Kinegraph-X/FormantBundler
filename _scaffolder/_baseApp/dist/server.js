@@ -20,16 +20,12 @@ const server = http.createServer((req, res) => {
 	const fileName = req.url.slice(1);
 	fs.access(fileName, function(err) {
 		if (err) {
-			error = true;
+			res.statusCode = 404;
+			res.end();
 		}
 		else
 			res.end(fs.readFileSync(fileName))
 	})
-		
-	if (error) {
-		res.statusCode = 404;
-		res.end();
-	}
   }
 });
 

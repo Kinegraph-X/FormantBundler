@@ -1,4 +1,4 @@
-const {appConstants, App} = require('formant');
+const {appConstants, App} = require('formantjs');
 
 (function () {
 	appConstants.launch({
