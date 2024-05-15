@@ -1,4 +1,5 @@
 const fs = require('fs');
+const exec = require('child_process').exec;
 
 //Load HTTP module
 const http = require("http");
@@ -33,3 +34,8 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+if (process.platform === 'win32')
+	exec(`explorer "http://${hostname}:${port}/"`);
+else
+	exec(`open "http://${hostname}:${port}/"`);

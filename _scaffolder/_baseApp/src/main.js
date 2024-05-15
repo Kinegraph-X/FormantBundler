@@ -2,7 +2,7 @@ const {appConstants, App} = require('formantjs');
 
 (function () {
 	appConstants.launch({
-		UIDPrefix : 'DocumentationApp'
+		UIDPrefix : 'appName'
 	});
 	
 	this.appNameLauncher = require('src/App/launcher/appNameLauncher');
