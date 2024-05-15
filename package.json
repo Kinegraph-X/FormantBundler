@@ -4,9 +4,6 @@
    "description": "Bundles a single project from the npm module or from the sources of the framework",
    "main": "// should be overridden by gruntfile",
    "scripts": {
-	"globalInstalls" : "npm -g install grunt && npm -g install sorcery",
-	"buildFromSource" : "cd \"c:/production data/Git/_frameworkCoreBuild\" && grunt && cd ../_frameworkComponentsBuild && grunt && cd \"c:/production data/Git/projects/documentationApp\" && grunt build",
-	"build" : "cd \"c:/production data/Git/projects/documentationApp\" && grunt build"
    },
    "devDependencies": {
       "@jsdevtools/sourcemapify": "^2.0.2",

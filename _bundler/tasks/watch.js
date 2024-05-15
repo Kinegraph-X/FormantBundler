@@ -3,6 +3,7 @@ module.exports = function(grunt, options) {
 	let files = [];
 	options.browserifyPath.forEach(function(path) {
 		files.push(path + '/**/*.js');
+		files.push(path + '/**/*.css');
 	});
 	
 	return {
